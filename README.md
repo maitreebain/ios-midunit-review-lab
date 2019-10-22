@@ -9,6 +9,10 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+```swift
+var helloThere = "Hello, there"
+print(helloThere.uppercased())
+```
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
