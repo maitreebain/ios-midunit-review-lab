@@ -20,6 +20,15 @@ Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
 
+```
+var strArray = [String]()
+strArray.append(helloThere)
+
+for (index, char) in helloThere.enumerated() where index % 2 == 0{
+    print(char.uppercased())
+}
+
+```
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
 
@@ -37,17 +46,38 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `5`
 
+```
+var arr = [1,5,2,4,1,4]
+
+arr.max()
+```
+
 2. **Given an array of type [Int], return the smallest element**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `1`
 
+```
+var arr = [1,5,2,4,1,4]
+
+arr.min()
+```
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
+
+```
+var arr = [1,5,2,4,1,4]
+var sum = 0
+
+for (_, item) in arr.enumerated() {
+    sum += item
+}
+print(sum)
+```
 
 4. **Given an array of type [Double], return its average**
 
@@ -55,12 +85,39 @@ Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
 
+```
+var arr = [3,4.5,7.5,2,1]
+var sum: Double = 0
+var result: Double = 0
+
+for (_, item) in arr.enumerated() {
+    sum += item
+    result = sum / Double(arr.count)
+}
+print(sum)
+print(result)
+
+```
+
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
 Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
 
+```
+var arr = [3,4.5,7.5,2,1]
+var num: Double = 3
+var sum: Double = 0
+
+
+for (index, value) in arr.enumerated() {
+    if value > num {
+    sum += value
+    }
+}
+print(sum)
+```
 
 6. **Given an array of type [Double], return the product of all the elements**
 
@@ -74,6 +131,13 @@ Input: `[3,6,1,9,4,8]`
 
 Output: `3`
 
+```
+var arr: [Int] = [3,6,1,9,4,8]
+
+var min = arr.sorted()
+min[1]
+```
+
 ## Optionals
 
 1. **Given an array of type [String?] return an array of [String] removing all nil values**
@@ -81,6 +145,19 @@ Output: `3`
 Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
+
+```
+var strArray = [nil, "We", "come", nil, "in", "peace"]
+
+
+for str in strArray {
+    if str == nil {
+        strArray.append(str ?? "")
+    }
+}
+
+```
+
 
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
@@ -113,8 +190,24 @@ Output: `24`
 
 Input: `["apple", "apple", "banana", "banana", "banana", "cake", "cake"]`
 
-Output: `["apple", "banana", "cake"]`
+Output: `["apple", "banana", "cake"]
 
+```
+let myString = ["apple", "apple", "banana", "banana", "banana", "cake", "cake"]
+var repeatDictionary = [String: Int]()
+
+for str in myString{
+    
+    if let value = repeatDictionary[str] {
+        repeatDictionary[str] = value + 1
+    } else {
+        repeatDictionary[str] = 1
+        
+    }
+    
+}
+print(repeatDictionary)
+```
 2. **Given a String, find the most frequently occurring letter**
 
 Input: `Never trust a computer you can't throw out a window ~ Steve Wozniak`
